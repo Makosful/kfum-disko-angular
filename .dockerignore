@@ -1,0 +1,18 @@
+# Containerization
+Dockerfile
+.dockerignore
+
+# Versioning
+.git/
+.gitignore
+
+# Node
+node_modules/
+
+# Angular
+.angular/
+dist/
+
+## Testing
+karma.conf.js
+tsconfig.spec.json
