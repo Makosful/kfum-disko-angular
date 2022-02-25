@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  keycloakUrl: 'http://localhost:8010/',
+  keycloakRealm: 'angular-web',
+  keycloakClientId: 'angular-web-client'
 };
 
 /*
