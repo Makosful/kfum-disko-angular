@@ -12,10 +12,12 @@ import {GraphqlModule} from "./graphql.module";
 import {HttpClientModule} from "@angular/common/http";
 import {ApolloModule} from "apollo-angular";
 import {KfumDiskoModule} from "./kfum-disko/kfum-disko.module";
+import {NotFoundComponent} from "./shared/not-found/not-found.component";
 
 @NgModule({
   declarations: [
     AppComponent,
+    NotFoundComponent,
     NavbarComponent,
     HeaderComponent,
     FooterComponent,

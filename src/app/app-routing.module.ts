@@ -1,17 +1,14 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { GuardedComponent } from "./guarded/guarded.component";
-import { HomeComponent } from "./home/home.component";
-import {AuthGuard} from "./utils/app.auth";
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {NotFoundComponent} from "./shared/not-found/not-found.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent, },
-  { path: 'guarded', component: GuardedComponent, canActivate:[AuthGuard] },
+  {path: '', redirectTo: 'members', pathMatch: 'full'},
   {
     path: 'members',
     loadChildren: () => import('./kfum-disko/kfum-disko-routing.module').then(mod => mod.KfumDiskoRoutingModule)
-  }
+  },
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
