@@ -1,1 +1,18 @@
-<router-outlet></router-outlet>
+<div class="container h-100">
+
+  <app-header class="row"></app-header>
+
+  <div class="row">
+
+    <nav class="col-3">
+      <app-navbar></app-navbar>
+    </nav>
+
+    <main class="col-9">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <app-footer class="row"></app-footer>
+
+</div>

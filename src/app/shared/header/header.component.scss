@@ -1,0 +1,12 @@
+@import "src/assets/style/scss/colors";
+
+header {
+  background-color: $accent-grey;
+  color: $text-color-light;
+}
+
+.logout {
+  background: transparent;
+  border: none !important;
+  color: $text-color-light;
+}

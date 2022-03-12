@@ -1,0 +1,9 @@
+@import "src/assets/style/scss/colors";
+
+footer {
+  background-color: $accent-grey;
+  color: $text-color-light;
+  a {
+    color: $text-color-light;
+  }
+}

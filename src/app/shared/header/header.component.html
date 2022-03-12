@@ -1,0 +1,15 @@
+<header>
+  <div class="row">
+    <div class="col">
+      <p>Beginning</p>
+    </div>
+    <div class="col-auto">
+      <p>Welcome, {{user}}</p>
+    </div>
+    <div class="col-auto">
+      <button (click)="signOut()" class="logout">
+        <fa-icon [icon]="faSignOut"></fa-icon>
+      </button>
+    </div>
+  </div>
+</header>

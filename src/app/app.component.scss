@@ -1,0 +1,16 @@
+//$asd: #333333;
+@import "src/assets/style/scss/colors";
+
+.top{
+  height: 20px;
+  background-color: $accent-grey;
+}
+
+.bottom{
+  height: 20px;
+  background-color: $accent-grey;
+}
+
+main {
+  background-color: $text-color-light;
+}

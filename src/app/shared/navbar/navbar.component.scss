@@ -1,0 +1,11 @@
+@import "src/assets/style/scss/colors";
+
+div
+{
+  background-color: #5a96f0;
+  list-style-type: none;
+}
+
+a {
+  color: $text-color-light;
+}
