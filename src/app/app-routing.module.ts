@@ -8,10 +8,15 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent, },
   { path: 'guarded', component: GuardedComponent, canActivate:[AuthGuard] },
+  {
+    path: 'members',
+    loadChildren: () => import('./kfum-disko/kfum-disko-routing.module').then(mod => mod.KfumDiskoRoutingModule)
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

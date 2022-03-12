@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   keycloakUrl: 'http://localhost:8010/',
   keycloakRealm: 'angular-web',
-  keycloakClientId: 'angular-web-client'
+  keycloakClientId: 'angular-web-client',
+  graphqlUri: 'http://localhost:5000/graphql'
 };
 
 /*
