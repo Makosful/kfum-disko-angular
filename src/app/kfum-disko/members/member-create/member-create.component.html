@@ -1,0 +1,138 @@
+<div class="container">
+
+  <form
+    [formGroup]="memberForm"
+    (ngSubmit)="onSubmit()">
+
+    <!-- Name -->
+    <div class="row mt-1 mb-1">
+      <!-- First name -->
+      <div class="col">
+        <input
+          id="form-firstname"
+          class="form-control"
+          formControlName="firstName"
+          placeholder="Fornavn"
+          type="text">
+      </div>
+      <!-- Last Name -->
+      <div class="col">
+        <input
+          id="form-lastname"
+          class="form-control"
+          formControlName="lastName"
+          placeholder="Efternavn"
+          type="text">
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="row mt-1 mb-1">
+      <!-- Zip Code -->
+      <div class="col-2">
+        <input
+          id="form-zip"
+          class="form-control col"
+          formControlName="zipCode"
+          placeholder="Postnr."
+          type="text">
+      </div>
+      <!-- Address 1 -->
+      <div class="col-5">
+        <input
+          class="form-control"
+          formControlName="address1"
+          placeholder="Addresse"
+          type="text">
+      </div>
+      <!-- Address 2 -->
+      <div class="col-5">
+        <input
+          class="form-control"
+          formControlName="address2"
+          placeholder="Addresse2"
+          type="text">
+      </div>
+    </div>
+
+    <div class="row mt-1 mb-1">
+      <!-- Gender -->
+      <div class="col">
+        <select
+          id="form-gender"
+          class="form-control col"
+          formControlName="gender">
+          <option value="">Vælg køn</option>
+          <option value="male">Dreng - Mand</option>
+          <option value="female">Pige - Kvinde</option>
+        </select>
+      </div>
+      <!-- Birthday -->
+      <div class="col">
+        <input
+          id="form-birthday"
+          class="form-control col"
+          formControlName="birthday"
+          type="date">
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="row mt-1 mb-1">
+      <!-- Email -->
+      <div class="col-6">
+        <input
+          id="form-email"
+          class="form-control"
+          formControlName="email"
+          placeholder="Email addresse"
+          type="email">
+      </div>
+      <!-- Mobile -->
+      <div class="col-3">
+        <input
+          class="form-control"
+          formControlName="mobile"
+          placeholder="Mobil nummer"
+          type="tel">
+      </div>
+      <!-- Phone -->
+      <div class="col-3">
+        <input
+          class="form-control"
+          formControlName="phone"
+          placeholder="Telefon nummer"
+          type="tel">
+      </div>
+    </div>
+
+    <div class="row mt-1 mb-1">
+      <!-- Group -->
+      <div class="col">
+        <select
+          id="form-group"
+          class="form-control"
+          formControlName="group">
+          <option value="">Ingen gruppe er valgt</option>
+          <option *ngFor="let group of groups" [ngValue]="group">{{group}}</option>
+        </select>
+      </div>
+      <!-- Arrangement -->
+      <div class="col">
+        <select
+          id="form-arrangement"
+          class="form-control"
+          formControlName="arrangement">
+          <option value="">Intent arrangement er valgt</option>
+          <option *ngFor="let arrangement of arrangements" [ngValue]="arrangement">{{arrangement}}</option>
+        </select>
+      </div>
+    </div>
+
+
+    <!-- Submit button -->
+    <button [disabled]="!memberForm.valid" type="submit" class="btn btn-primary col-2 mt-1 mb-1">Opret medlem</button>
+
+  </form>
+
+</div>
