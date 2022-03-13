@@ -3,9 +3,9 @@ import {RouterModule, Routes} from '@angular/router';
 import {NotFoundComponent} from "./shared/not-found/not-found.component";
 
 const routes: Routes = [
-  {path: '', redirectTo: 'members', pathMatch: 'full'},
+  {path: '', redirectTo: 'disko', pathMatch: 'full'},
   {
-    path: 'members',
+    path: 'disko',
     loadChildren: () => import('./kfum-disko/kfum-disko-routing.module').then(mod => mod.KfumDiskoRoutingModule)
   },
   {path: '**', component: NotFoundComponent}
