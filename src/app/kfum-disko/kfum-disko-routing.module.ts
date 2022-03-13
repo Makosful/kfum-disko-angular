@@ -5,6 +5,7 @@ import {MemberCreateComponent} from "./members/member-create/member-create.compo
 
 const routes: Routes = [
   {path: '', component: MemberListComponent},
+  {path: 'list', component: MemberListComponent},
   {path: 'create', component: MemberCreateComponent},
 ];
 

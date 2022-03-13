@@ -1,14 +1,14 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {MemberListComponent} from './members/member-list/member-list.component';
 import {BrowserModule} from "@angular/platform-browser";
+import {MemberListComponent} from './members/member-list/member-list.component';
 import {MemberCreateComponent} from './members/member-create/member-create.component';
 import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
   declarations: [
-    MemberListComponent
+    MemberListComponent,
     MemberCreateComponent,
   ],
   imports: [
