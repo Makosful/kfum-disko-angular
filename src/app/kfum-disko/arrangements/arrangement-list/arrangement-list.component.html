@@ -1,0 +1,40 @@
+<div class="container">
+  <h3>Arrangementer</h3>
+
+  <div class="row">
+    <div class="col-3">
+      <a href="#">Opret nyt arrangement</a>
+    </div>
+    <div class="col-3">
+      <a href="#">Arrangements typer</a>
+    </div>
+  </div>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Dato</th>
+      <th scope="col">Låst</th>
+      <th scope="col">Title</th>
+      <th scope="col">Type</th>
+      <th scope="col">MKbiletten</th>
+      <th scope="col">ret</th>
+      <th scope="col">Slet</th>
+      <th scope="col">hjælpere</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let arrangement of arrangements">
+      <td>{{arrangement.date}}</td>
+      <td>{{arrangement.isLocked}}</td>
+      <td>{{arrangement.title}}</td>
+      <td>{{arrangement.type}}</td>
+      <td>{{arrangement.ticket}}</td>
+      <td>edit</td> <!-- TODO Change to link-->
+      <td>delete</td> <!-- TODO Change to link-->
+      <td>{{arrangement.helpers}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
