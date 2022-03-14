@@ -1,0 +1,604 @@
+<div class="container">
+  <h3>Opret nyr arrangement</h3>
+
+  <form
+    [formGroup]="arrangementForm"
+    (ngSubmit)="onSubmit()">
+
+    <!-- Title -->
+    <div class="row">
+      <div class="col-3">
+        <label
+          for="form-title">
+          Title
+        </label>
+      </div>
+      <div class="col">
+        <input
+          id="form-title"
+          class="form-control"
+          formControlName="title"
+          type="text">
+      </div>
+    </div>
+
+    <!-- Date -->
+    <div class="row">
+      <div class="col-3">
+        <label
+          for="form-date">
+          Dato
+        </label>
+      </div>
+      <div class="col-3">
+        <input
+          id="form-date"
+          class="form-control"
+          formControlName="date"
+          type="date">
+      </div>
+    </div>
+
+    <!-- Arrangement Type -->
+    <div class="row">
+      <div class="col-3">
+        <label
+          for="form-type">
+          Arrangement Type
+        </label>
+      </div>
+      <div class="col-3">
+        <select
+          id="form-type"
+          formControlName="type"
+          class="form-control">
+          <option *ngFor="let type of arrangementType" [ngValue]="type">{{type}}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Start Time -->
+    <div class="row">
+      <div class="col-3">
+        <label>
+          Start tidspunkt
+        </label>
+      </div>
+      <div class="col-3">
+        <select
+          id="form-start-hour"
+          formControlName="startHour">
+          <option [ngValue]="0">00</option>
+          <option [ngValue]="1">01</option>
+          <option [ngValue]="2">02</option>
+          <option [ngValue]="3">03</option>
+          <option [ngValue]="4">04</option>
+          <option [ngValue]="5">05</option>
+          <option [ngValue]="6">06</option>
+          <option [ngValue]="7">07</option>
+          <option [ngValue]="8">08</option>
+          <option [ngValue]="9">09</option>
+          <option [ngValue]="10">10</option>
+          <option [ngValue]="11">11</option>
+          <option [ngValue]="12">12</option>
+          <option [ngValue]="13">13</option>
+          <option [ngValue]="14">14</option>
+          <option [ngValue]="15">15</option>
+          <option [ngValue]="16">16</option>
+          <option [ngValue]="17">17</option>
+          <option [ngValue]="18">18</option>
+          <option [ngValue]="19">19</option>
+          <option [ngValue]="20">20</option>
+          <option [ngValue]="21">21</option>
+          <option [ngValue]="22">22</option>
+          <option [ngValue]="23">23</option>
+        </select>
+        <span>:</span>
+        <select
+          id="form-start-min"
+          formControlName="startMin">
+          <option [ngValue]="0">00</option>
+          <option [ngValue]="1">01</option>
+          <option [ngValue]="2">02</option>
+          <option [ngValue]="3">03</option>
+          <option [ngValue]="4">04</option>
+          <option [ngValue]="5">05</option>
+          <option [ngValue]="6">06</option>
+          <option [ngValue]="7">07</option>
+          <option [ngValue]="8">08</option>
+          <option [ngValue]="9">09</option>
+          <option [ngValue]="10">10</option>
+          <option [ngValue]="11">11</option>
+          <option [ngValue]="12">12</option>
+          <option [ngValue]="13">13</option>
+          <option [ngValue]="14">14</option>
+          <option [ngValue]="15">15</option>
+          <option [ngValue]="16">16</option>
+          <option [ngValue]="17">17</option>
+          <option [ngValue]="18">18</option>
+          <option [ngValue]="19">19</option>
+          <option [ngValue]="20">20</option>
+          <option [ngValue]="21">21</option>
+          <option [ngValue]="22">22</option>
+          <option [ngValue]="23">23</option>
+          <option [ngValue]="24">24</option>
+          <option [ngValue]="25">25</option>
+          <option [ngValue]="26">26</option>
+          <option [ngValue]="27">27</option>
+          <option [ngValue]="28">28</option>
+          <option [ngValue]="29">29</option>
+          <option [ngValue]="30">30</option>
+          <option [ngValue]="31">31</option>
+          <option [ngValue]="32">32</option>
+          <option [ngValue]="33">33</option>
+          <option [ngValue]="34">34</option>
+          <option [ngValue]="35">35</option>
+          <option [ngValue]="36">36</option>
+          <option [ngValue]="37">37</option>
+          <option [ngValue]="38">38</option>
+          <option [ngValue]="39">39</option>
+          <option [ngValue]="40">40</option>
+          <option [ngValue]="41">41</option>
+          <option [ngValue]="42">42</option>
+          <option [ngValue]="43">43</option>
+          <option [ngValue]="44">44</option>
+          <option [ngValue]="45">45</option>
+          <option [ngValue]="46">46</option>
+          <option [ngValue]="47">47</option>
+          <option [ngValue]="48">48</option>
+          <option [ngValue]="49">49</option>
+          <option [ngValue]="50">50</option>
+          <option [ngValue]="51">51</option>
+          <option [ngValue]="52">52</option>
+          <option [ngValue]="53">53</option>
+          <option [ngValue]="54">54</option>
+          <option [ngValue]="55">55</option>
+          <option [ngValue]="56">56</option>
+          <option [ngValue]="57">57</option>
+          <option [ngValue]="58">58</option>
+          <option [ngValue]="59">59</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- End Time -->
+    <div class="row">
+      <div class="col-3">
+        <label>
+          Slut tidspunkt
+        </label>
+      </div>
+      <div class="col">
+        <select
+          id="form-end-hour"
+          formControlName="endHour">
+          <option [ngValue]="0">00</option>
+          <option [ngValue]="1">01</option>
+          <option [ngValue]="2">02</option>
+          <option [ngValue]="3">03</option>
+          <option [ngValue]="4">04</option>
+          <option [ngValue]="5">05</option>
+          <option [ngValue]="6">06</option>
+          <option [ngValue]="7">07</option>
+          <option [ngValue]="8">08</option>
+          <option [ngValue]="9">09</option>
+          <option [ngValue]="10">10</option>
+          <option [ngValue]="11">11</option>
+          <option [ngValue]="12">12</option>
+          <option [ngValue]="13">13</option>
+          <option [ngValue]="14">14</option>
+          <option [ngValue]="15">15</option>
+          <option [ngValue]="16">16</option>
+          <option [ngValue]="17">17</option>
+          <option [ngValue]="18">18</option>
+          <option [ngValue]="19">19</option>
+          <option [ngValue]="20">20</option>
+          <option [ngValue]="21">21</option>
+          <option [ngValue]="22">22</option>
+          <option [ngValue]="23">23</option>
+        </select>
+        <span>:</span>
+        <select
+          id="form-end-min"
+          formControlName="endMin">
+          <option [ngValue]="0">00</option>
+          <option [ngValue]="1">01</option>
+          <option [ngValue]="2">02</option>
+          <option [ngValue]="3">03</option>
+          <option [ngValue]="4">04</option>
+          <option [ngValue]="5">05</option>
+          <option [ngValue]="6">06</option>
+          <option [ngValue]="7">07</option>
+          <option [ngValue]="8">08</option>
+          <option [ngValue]="9">09</option>
+          <option [ngValue]="10">10</option>
+          <option [ngValue]="11">11</option>
+          <option [ngValue]="12">12</option>
+          <option [ngValue]="13">13</option>
+          <option [ngValue]="14">14</option>
+          <option [ngValue]="15">15</option>
+          <option [ngValue]="16">16</option>
+          <option [ngValue]="17">17</option>
+          <option [ngValue]="18">18</option>
+          <option [ngValue]="19">19</option>
+          <option [ngValue]="20">20</option>
+          <option [ngValue]="21">21</option>
+          <option [ngValue]="22">22</option>
+          <option [ngValue]="23">23</option>
+          <option [ngValue]="24">24</option>
+          <option [ngValue]="25">25</option>
+          <option [ngValue]="26">26</option>
+          <option [ngValue]="27">27</option>
+          <option [ngValue]="28">28</option>
+          <option [ngValue]="29">29</option>
+          <option [ngValue]="30">30</option>
+          <option [ngValue]="31">31</option>
+          <option [ngValue]="32">32</option>
+          <option [ngValue]="33">33</option>
+          <option [ngValue]="34">34</option>
+          <option [ngValue]="35">35</option>
+          <option [ngValue]="36">36</option>
+          <option [ngValue]="37">37</option>
+          <option [ngValue]="38">38</option>
+          <option [ngValue]="39">39</option>
+          <option [ngValue]="40">40</option>
+          <option [ngValue]="41">41</option>
+          <option [ngValue]="42">42</option>
+          <option [ngValue]="43">43</option>
+          <option [ngValue]="44">44</option>
+          <option [ngValue]="45">45</option>
+          <option [ngValue]="46">46</option>
+          <option [ngValue]="47">47</option>
+          <option [ngValue]="48">48</option>
+          <option [ngValue]="49">49</option>
+          <option [ngValue]="50">50</option>
+          <option [ngValue]="51">51</option>
+          <option [ngValue]="52">52</option>
+          <option [ngValue]="53">53</option>
+          <option [ngValue]="54">54</option>
+          <option [ngValue]="55">55</option>
+          <option [ngValue]="56">56</option>
+          <option [ngValue]="57">57</option>
+          <option [ngValue]="58">58</option>
+          <option [ngValue]="59">59</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Doors Open -->
+    <div class="row">
+      <div class="col-3">
+        <label>
+          Dørene åbner
+        </label>
+      </div>
+      <div class="col">
+        <select
+          id="form-doors-hour"
+          formControlName="doorsOpenHour">
+          <option [ngValue]="0">00</option>
+          <option [ngValue]="1">01</option>
+          <option [ngValue]="2">02</option>
+          <option [ngValue]="3">03</option>
+          <option [ngValue]="4">04</option>
+          <option [ngValue]="5">05</option>
+          <option [ngValue]="6">06</option>
+          <option [ngValue]="7">07</option>
+          <option [ngValue]="8">08</option>
+          <option [ngValue]="9">09</option>
+          <option [ngValue]="10">10</option>
+          <option [ngValue]="11">11</option>
+          <option [ngValue]="12">12</option>
+          <option [ngValue]="13">13</option>
+          <option [ngValue]="14">14</option>
+          <option [ngValue]="15">15</option>
+          <option [ngValue]="16">16</option>
+          <option [ngValue]="17">17</option>
+          <option [ngValue]="18">18</option>
+          <option [ngValue]="19">19</option>
+          <option [ngValue]="20">20</option>
+          <option [ngValue]="21">21</option>
+          <option [ngValue]="22">22</option>
+          <option [ngValue]="23">23</option>
+        </select>
+        <span>:</span>
+        <select
+          id="form-doors-min"
+          formControlName="doorsOpenMin">
+          <option [ngValue]="0">00</option>
+          <option [ngValue]="1">01</option>
+          <option [ngValue]="2">02</option>
+          <option [ngValue]="3">03</option>
+          <option [ngValue]="4">04</option>
+          <option [ngValue]="5">05</option>
+          <option [ngValue]="6">06</option>
+          <option [ngValue]="7">07</option>
+          <option [ngValue]="8">08</option>
+          <option [ngValue]="9">09</option>
+          <option [ngValue]="10">10</option>
+          <option [ngValue]="11">11</option>
+          <option [ngValue]="12">12</option>
+          <option [ngValue]="13">13</option>
+          <option [ngValue]="14">14</option>
+          <option [ngValue]="15">15</option>
+          <option [ngValue]="16">16</option>
+          <option [ngValue]="17">17</option>
+          <option [ngValue]="18">18</option>
+          <option [ngValue]="19">19</option>
+          <option [ngValue]="20">20</option>
+          <option [ngValue]="21">21</option>
+          <option [ngValue]="22">22</option>
+          <option [ngValue]="23">23</option>
+          <option [ngValue]="24">24</option>
+          <option [ngValue]="25">25</option>
+          <option [ngValue]="26">26</option>
+          <option [ngValue]="27">27</option>
+          <option [ngValue]="28">28</option>
+          <option [ngValue]="29">29</option>
+          <option [ngValue]="30">30</option>
+          <option [ngValue]="31">31</option>
+          <option [ngValue]="32">32</option>
+          <option [ngValue]="33">33</option>
+          <option [ngValue]="34">34</option>
+          <option [ngValue]="35">35</option>
+          <option [ngValue]="36">36</option>
+          <option [ngValue]="37">37</option>
+          <option [ngValue]="38">38</option>
+          <option [ngValue]="39">39</option>
+          <option [ngValue]="40">40</option>
+          <option [ngValue]="41">41</option>
+          <option [ngValue]="42">42</option>
+          <option [ngValue]="43">43</option>
+          <option [ngValue]="44">44</option>
+          <option [ngValue]="45">45</option>
+          <option [ngValue]="46">46</option>
+          <option [ngValue]="47">47</option>
+          <option [ngValue]="48">48</option>
+          <option [ngValue]="49">49</option>
+          <option [ngValue]="50">50</option>
+          <option [ngValue]="51">51</option>
+          <option [ngValue]="52">52</option>
+          <option [ngValue]="53">53</option>
+          <option [ngValue]="54">54</option>
+          <option [ngValue]="55">55</option>
+          <option [ngValue]="56">56</option>
+          <option [ngValue]="57">57</option>
+          <option [ngValue]="58">58</option>
+          <option [ngValue]="59">59</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Prices -->
+    <div class="row">
+      <label class="col4">Priser</label>
+      <div class="col">
+
+        <!-- Online sale -->
+        <div class="row">
+          <div class="col-4 offset-3">
+            <label
+              for="form-price-online">
+              Onlinesalg
+            </label>
+          </div>
+          <div class="col-2">
+            <input
+              id="form-price-online"
+              class="form-control"
+              formControlName="onlinePrice"
+              type="number">
+          </div>
+        </div>
+
+        <!-- First visit -->
+        <div class="row">
+          <div class="col-4 offset-3">
+            <label
+              for="form-price-first">
+              Første besøg
+            </label>
+          </div>
+          <div class="col-2">
+            <input
+              id="form-price-first"
+              class="form-control"
+              formControlName="firstPrice"
+              type="number">
+          </div>
+        </div>
+
+        <!-- Average fee -->
+        <div class="row">
+          <div class="col-4 offset-3">
+            <label
+              for="form-price-normal">
+              Almindelig entre
+            </label>
+          </div>
+          <div class="col-2">
+            <input
+              id="form-price-normal"
+              class="form-control"
+              formControlName="normalPrice"
+              type="number">
+          </div>
+        </div>
+
+        <!-- No card price -->
+        <div class="row">
+          <div class="col-4 offset-3">
+            <label
+              for="form-price-cardless">
+              Entre ved glemt kort
+            </label>
+          </div>
+          <div class="col-2">
+            <input
+              id="form-price-cardless"
+              class="form-control"
+              formControlName="priceNoCard"
+              type="number">
+          </div>
+        </div>
+
+        <!-- Free entry, no card -->
+        <div class="row">
+          <div class="col-4 offset-3">
+            <label
+              for="form-price-free">
+              Grantis entre, uden kort
+            </label>
+          </div>
+          <div class="col-2">
+            <input
+              id="form-price-free"
+              class="form-control"
+              formControlName="freeNoCard"
+              type="number">
+          </div>
+        </div>
+
+        <!-- Birthday guest -->
+        <div class="row">
+          <div class="col-4 offset-3">
+            <label
+              for="form-price-birthday">
+              Fødselsdagsgæst
+            </label>
+          </div>
+          <div class="col-2">
+            <input
+              id="form-price-birthday"
+              class="form-control"
+              formControlName="birthdayPrice"
+              type="number">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Max capacity -->
+    <div class="row">
+      <div class="col-3">
+        <label
+          for="form-capacity">
+          Max antal deltagere
+        </label>
+      </div>
+      <div class="col-2">
+        <input
+          id="form-capacity"
+          class="form-control"
+          formControlName="capacity"
+          type="number">
+      </div>
+    </div>
+
+    <!-- Online sale -->
+    <div class="row">
+      <div class="col-3">
+        <label
+          for="form-online-sale">
+          Online salg
+        </label>
+      </div>
+      <div class="col-1">
+        <input
+          id="form-online-sale"
+          class="form-check-input"
+          formControlName="onlineSale"
+          type="checkbox">
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div class="row">
+      <div class="col-3">
+        <label
+          for="form-location">
+          Sted
+        </label>
+      </div>
+      <div class="col">
+        <input
+          id="form-location"
+          class="form-control"
+          formControlName="location"
+          type="text">
+      </div>
+    </div>
+
+    <!-- Address -->
+    <div class="row">
+      <div class="col-3">
+        <label
+          for="form-address">
+          Adresse
+        </label>
+      </div>
+      <div class="col">
+        <input
+          id="form-address"
+          class="form-control"
+          formControlName="address"
+          type="text">
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="row">
+      <div class="col-3">
+        <label
+          for="form-description">
+          Beskrivelse
+        </label>
+      </div>
+      <div class="col">
+        <textarea
+          id="form-description"
+          class="form-control"
+          formControlName="description">
+        </textarea>
+      </div>
+    </div>
+
+    <!-- Groups -->
+    <div class="row">
+      <div class="col-3">
+        <label>
+          Gruper der har adgang til arrangementet
+        </label>
+      </div>
+      <div class="col">
+        <div *ngFor="let group of groups">
+          <input
+            id="form-{{group.id}}"
+            class="form-check-input"
+            (change)="group.isSelected = !group.isSelected"
+            type="checkbox">
+          <label
+            for="form-{{group.id}}"
+            class="form-check-label">
+            {{group.title}}
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit button -->
+    <div class="row">
+      <div class="col-3">
+        <button
+          class="btn btn-primary"
+          [disabled]="!arrangementForm.valid"
+          type="submit">
+          Opret arrangement
+        </button>
+      </div>
+    </div>
+
+  </form>
+
+</div>

@@ -1,0 +1,9 @@
+@import "src/assets/style/scss/colors";
+
+input.ng-invalid {
+  border-color: $validation-fail;
+}
+
+select.ng-invalid {
+  border-color: $validation-fail;
+}
