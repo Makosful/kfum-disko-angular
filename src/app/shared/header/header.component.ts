@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { faSignOut } from '@fortawesome/free-solid-svg-icons';
+import {Component, OnInit} from '@angular/core';
+import {faSignOut} from '@fortawesome/free-solid-svg-icons';
 import {KeycloakService} from "keycloak-angular";
 
 @Component({
@@ -15,10 +15,15 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private keycloak: KeycloakService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
     this.initializeUserOptions();
+  }
+
+  signOut() {
+    this.keycloak.logout(window.location.origin);
   }
 
   private initializeUserOptions() {
@@ -26,9 +31,5 @@ export class HeaderComponent implements OnInit {
       if (isLoggedIn)
         this.user = this.keycloak.getUsername();
     })
-  }
-
-  signOut(){
-    this.keycloak.logout(window.location.origin);
   }
 }

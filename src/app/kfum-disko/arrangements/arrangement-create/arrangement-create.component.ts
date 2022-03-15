@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -34,7 +34,8 @@ export class ArrangementCreateComponent implements OnInit {
     description: new FormControl('Lorem ipsum'),
   });
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.arrangementType = ["Disko", "Hjælper/Leder"]
@@ -46,7 +47,7 @@ export class ArrangementCreateComponent implements OnInit {
     ]
   }
 
-  onSubmit(){
+  onSubmit() {
     console.debug(this.arrangementForm.controls);
     this.groups.forEach(value => {
       console.debug(`${value.title} ${value.isSelected}`);

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-arrangement-list',
@@ -9,7 +9,8 @@ export class ArrangementListComponent implements OnInit {
 
   arrangements: any[] = [];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
     this.arrangements = [{

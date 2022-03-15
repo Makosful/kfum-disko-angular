@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { faClipboardList,faHeadset } from '@fortawesome/free-solid-svg-icons';
+import {Component, OnInit} from '@angular/core';
+import {faClipboardList, faHeadset} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-footer',
@@ -11,7 +11,8 @@ export class FooterComponent implements OnInit {
   faClipboardList = faClipboardList;
   faHeadset = faHeadset;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
