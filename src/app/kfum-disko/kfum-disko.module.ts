@@ -1,3 +1,4 @@
+import {AppRoutingModule} from "../app-routing.module";
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {BrowserModule} from "@angular/platform-browser";
@@ -18,6 +19,7 @@ import { ArrangementCreateComponent } from './arrangements/arrangement-create/ar
   imports: [
     CommonModule,
     BrowserModule,
+    AppRoutingModule,
     ReactiveFormsModule,
   ]
 })
