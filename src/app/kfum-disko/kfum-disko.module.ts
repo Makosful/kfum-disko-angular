@@ -7,6 +7,7 @@ import {MemberCreateComponent} from './members/member-create/member-create.compo
 import {ReactiveFormsModule} from "@angular/forms";
 import {ArrangementListComponent} from './arrangements/arrangement-list/arrangement-list.component';
 import {ArrangementCreateComponent} from './arrangements/arrangement-create/arrangement-create.component';
+import {ArrangementActivateComponent} from './arrangements/arrangement-activate/arrangement-activate.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import {ArrangementCreateComponent} from './arrangements/arrangement-create/arra
     MemberCreateComponent,
     ArrangementListComponent,
     ArrangementCreateComponent,
+    ArrangementActivateComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,28 @@
+<div class="container">
+
+  <h3>Aktiver Arrangementer</h3>
+
+  <p>Vælg det arrangement, som skal aktiveres til Check ind og Check ud.</p>
+
+  <form
+    (ngSubmit)="onSubmit()"
+    [formGroup]="form"
+    class="row">
+    <select
+      class="form-control col me-3"
+      formControlName="control">
+      <option [value]=null>Vælg det arrangement</option>
+      <option *ngFor="let a of arrangements">
+        {{a.title}}
+      </option>
+    </select>
+
+    <button
+      class="btn btn-primary col-3"
+      type="submit">
+      Aktiver arrangement
+    </button>
+
+  </form>
+
+</div>
