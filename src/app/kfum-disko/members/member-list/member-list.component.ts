@@ -23,7 +23,8 @@ export class MemberListComponent implements OnInit {
         query{
           member {
             id
-            name
+            firstName
+            lastName
           }
         }`,
       })
