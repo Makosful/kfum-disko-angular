@@ -1,0 +1,21 @@
+export class Arrangement {
+  isActive: boolean = false;
+  title: String | undefined;
+  date: Date | undefined;
+  startTime: Date | undefined;
+  endTime: Date | undefined;
+  doorsOpen: Date | undefined;
+  onlineSale: number | undefined;
+  firstEntry: number | undefined;
+  normalEntry: number | undefined;
+  normalEntryWithoutCard: number | undefined;
+  freeEntryWithoutCard: number | undefined;
+  birthdayEntry: number | undefined;
+  capacity: number | undefined;
+  isOnlineSale: Boolean | undefined;
+  location: string | undefined;
+  address: string | undefined;
+  description: string | undefined;
+  id: string | undefined;
+  deleted: Boolean | undefined;
+}

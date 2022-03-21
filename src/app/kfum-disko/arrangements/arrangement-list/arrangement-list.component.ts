@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {Apollo, gql} from "apollo-angular";
+import {Arrangement} from '../../../shared/models/arrangement'
 
 @Component({
   selector: 'app-arrangement-list',
@@ -7,20 +9,29 @@ import {Component, OnInit} from '@angular/core';
 })
 export class ArrangementListComponent implements OnInit {
 
-  arrangements: any[] = [];
+  arrangements: Arrangement[] = [];
 
-  constructor() {
+  constructor(
+    private apollo: Apollo,
+  ) {
   }
 
   ngOnInit(): void {
-    this.arrangements = [{
-      date: new Date(),
-      isLocked: false,
-      title: 'Foobar',
-      type: 'disko',
-      ticket: null,
-      helpers: []
-    }];
+    this.apollo
+      .watchQuery({
+        query: gql`
+        query{
+          arrangements {
+            id
+            isActive
+            title
+            date
+          }
+        }`,
+      })
+      .valueChanges.subscribe((c: any) => {
+      this.arrangements = c.data.arrangements;
+    });
   }
 
 }
