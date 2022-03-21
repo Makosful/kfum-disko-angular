@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  keycloakUrl: 'http://localhost:8010/',
+  keycloakUrl: 'http://localhost:8010',
   keycloakRealm: 'angular-web',
   keycloakClientId: 'angular-web-client',
-  graphqlApi: 'http://localhost:5000/'
+  graphqlApi: 'http://localhost:5000'
 };
 
 /*
